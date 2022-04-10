@@ -13,7 +13,6 @@ This model is then compared to an Azure AutoML run.
 
 
 ## Summary
-**In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
 
 The [UCI Dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing) is concerned with the prediction of the success rate of a telemarketing campain of a portuguese bank.
 
@@ -22,12 +21,11 @@ Using the AutoML feature of Azure the best model was a LightGBM w/ an accuracy 9
 
 ## Scikit-learn Pipeline
 
-First we modifed a script for training a Logistic Regression regression model, which can handle external parameters. This gives us the opporunity to use Azure HyperDrive to find the best combination
-of $C$ and max_iter.
+First we modifed a script for training a Logistic Regression regression model, which can be parameterzied with the maximum iteration steps and the regularization parameter. This gives us the opporunity to use Azure HyperDrive to find the best combination of $C$ and *max_iter*.
 
 
 **What are the benefits of the parameter sampler you chose?**
-Using the random sampler enables us to quickly sample the configuration space and generate a good estimate w/o running a full grid search and therefore saving computation costs. Since the regulazation $C$ is continous we chose the uniform sampler, while for the maximum iteration parameter the choice sampler helps to find a good parameter.
+Using the random sampler enables us to quickly sample the configuration space and generate a good estimate w/o running a full grid search and therefore saving computation costs. Since the regulazation $C$ is continous we choose the uniform sampler, while for the maximum iteration parameter the choice sampler helps to find a good parameter.
 
 **What are the benefits of the early stopping policy you chose?**
 The bandit policy helps to stop bad performing runs. This saves costs and therefore spends the available compute resources to promising runs. 
@@ -40,12 +38,13 @@ The bandit policy helps to stop bad performing runs. This saves costs and theref
 **Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
 
 Both approaches are really effective in generating a good model. With the HyperDrive approach the data scientist is able to quickly generate a model based on his or her instincts. While AutoML is great for letting Azure select the best performing model. AutoML not only checks one model but
-a whole list of different models. 
+a whole list of different models and performs the hyperparameter tuning in one run. 
 
 Therefore with Hyperdrive the data scientist has more control over the model and its hyperparameters but AutoML enables the user to quickly setup a model with comparable accuracy without a lot of investigation into the data.
 
 In this case best performing model w/ hyperdrive was found in around 8minutes with an accurcy of 90.8497%, while AutoML took all 30min and resulted in an accuracy of 91.66%
 
+Since AutoML can choose from many different algorithms it is not surprising that it can check for algorithms, which are better taylored for the problem.
 
 
 ## Future work
@@ -55,6 +54,3 @@ In this case best performing model w/ hyperdrive was found in around 8minutes wi
 - Change from random to grid search in the hyperdrive model selection
 - AutoML detected *Class balancing detection*. One should take a closer look here and rerun w/ a balenced dataset
 
-## Proof of cluster clean up
-**If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
-**Image of cluster marked for deletion**
