@@ -1,3 +1,6 @@
 pandas
 azureml-defaults
+azureml-widgets
+azureml-train
+azureml-train-automl
 scikit-learn

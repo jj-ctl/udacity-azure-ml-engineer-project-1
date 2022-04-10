@@ -1,1 +1,5 @@
 venv/
+bankmarketing_train.csv
+.vscode
+__pycache__
+.config
