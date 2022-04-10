@@ -1,0 +1,3 @@
+pandas
+azureml-defaults
+scikit-learn
