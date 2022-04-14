@@ -41,8 +41,8 @@ Both approaches are really effective in generating a good model. With the HyperD
 a whole list of different models and performs the hyperparameter tuning in one run. 
 
 Therefore with Hyperdrive the data scientist has more control over the model and its hyperparameters but AutoML enables the user to quickly setup a model with comparable accuracy without a lot of investigation into the data.
-{'Regularization Strength:': 1.2825259388840535, 'Max iterations:': 512, 'Accuracy': 0.9089529590288316}
-In this case best performing model w/ hyperdrive was found in around 12 minutes with an accurcy of 90.8497%, while AutoML took all 15min and resulted in an accuracy of 91.66%
+
+In this case best performing model w/ hyperdrive was found in around 12 minutes with an accurcy of 90.89%, while AutoML took all 15min and resulted in an accuracy of 91.77%
 
 Since AutoML can choose from many different algorithms it is not surprising that it can check for algorithms, which are better taylored for the problem.
 
