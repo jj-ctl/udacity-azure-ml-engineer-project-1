@@ -33,6 +33,9 @@ The bandit policy helps to stop bad performing runs. This saves costs and theref
 
 ## AutoML
 
+AutoML had a timeout of 15minutes in order to find the best model. In this time it was able to check eight different models with accuracies ranging from 73% w/ an Extreme Random Tree model up to 91.77% percent w/ a VotingEnsemble model. In order to reuse the best model the VotingEnsemble was saved to the workspace model section.
+![](registered_models.png)
+
 
 ## Pipeline comparison
 **Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
