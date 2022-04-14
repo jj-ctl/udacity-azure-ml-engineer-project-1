@@ -16,7 +16,7 @@ This model is then compared to an Azure AutoML run.
 
 The [UCI Dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing) is concerned with the prediction of the success rate of a telemarketing campain of a portuguese bank.
 
-Using the AutoML feature of Azure the best model was a VotingEnsemble w/ an accuracy 91.76%.
+Using the AutoML feature of Azure the best model was a VotingEnsemble w/ an accuracy 91.77%.
 
 
 ## Scikit-learn Pipeline
