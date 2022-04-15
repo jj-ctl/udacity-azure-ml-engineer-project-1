@@ -56,6 +56,17 @@ Using the AutoML feature of Azure the best model was a VotingEnsemble w/ an accu
 
 First we modifed a script for training a Logistic Regression regression model, which can be parameterzied with the maximum iteration steps and the regularization parameter. This gives us the opporunity to use Azure HyperDrive to find the best combination of $C$ and *max_iter*.
 
+The basic structure of using HyperDrive is.
+
+1. Setup a training python script using the dataset
+2. Use a notebook controlling Azure
+   1. Setup a cluser 
+   2. Setup hyperdrive w/ hyperparameter config space
+   3. run hyperdrive
+   4. pick and register best model in Azure
+
+This was given by the instruction.
+
 A detailed list and more information on the dataset can be found here [Link to website of Bank Marketing Data Set](https://archive.ics.uci.edu/ml/datasets/bank+marketing) 
 
 Below a copy on the data explaination is displayed
